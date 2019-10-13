@@ -22,7 +22,7 @@ namespace TestGitApplication
 
             //comment added
             MessageBox.Show("hello");
-
+            //inside master branch
         }
     }
 }
