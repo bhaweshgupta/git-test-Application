@@ -24,35 +24,28 @@ namespace TestGitApplication
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            List<Employee> emplist = new List<Employee>();
 
-            //comment added
-            //develop branch added
-            //List<int> d = new List<int>();
-            //d.Add(1);
-            //d.Add(2);
-            //d.Add(3);
-            int[] numbers = { 1, 2, 3, 4, 5 };
-            var dd = from number in numbers where (number%2)==0
-                     select number;
-            MyDelegate DelObj = new MyDelegate(myFun1);
+            emplist.Add(new Employee() { Id = 1, Name = "sivakumar", Experience = 8 });
+            emplist.Add(new Employee() { Id = 2, Name = "Aravind", Experience = 2 });
+            emplist.Add(new Employee() { Id = 3, Name = "jagadeesh", Experience = 1 });
+            emplist.Add(new Employee() { Id = 4, Name = "subbalakshmi", Experience = 9 });
+
+
+            Employee.PromoteEmployee(emplist);
+
+            
+           // MyDelegate DelObj = new MyDelegate(myFun1);
             
             //DelObj += MyDelegate(myFun2);
 
-            MessageBox.Show(DelObj("ok1\t").ToString());
+           /// MessageBox.Show(DelObj("ok1\t").ToString());
             //DelObj -= (myFun1);
-            DelObj += (myFun2);
-            MessageBox.Show(DelObj("ok2\t").ToString());
+           // DelObj += (myFun2);
+    //           MessageBox.Show(DelObj("ok2\t").ToString());
 
         }
-        public string myFun1(string str)
-        {
-           return  str+"fun1";
-
-        }
-        public string myFun2(string str)
-        {
-            return str + "fun2";
-        }
+       
         
     }
 }
