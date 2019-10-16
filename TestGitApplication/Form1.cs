@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace TestGitApplication
 {
-    public delegate string MyDelegate(string str);
+    // public delegate string MyDelegate(string str);
+    public delegate bool IsPromotable(Employee emp);
     public partial class Form1 : Form
     {
         
@@ -18,10 +19,7 @@ namespace TestGitApplication
         {
             InitializeComponent();
         }
-        public void function(string str)
-        {
-
-        }
+       
         private void button1_Click(object sender, EventArgs e)
         {
             List<Employee> emplist = new List<Employee>();
@@ -31,21 +29,19 @@ namespace TestGitApplication
             emplist.Add(new Employee() { Id = 3, Name = "jagadeesh", Experience = 1 });
             emplist.Add(new Employee() { Id = 4, Name = "subbalakshmi", Experience = 9 });
 
+            IsPromotable isPromotableobj = new IsPromotable(checkinMain);
 
-            Employee.PromoteEmployee(emplist);
-
-            
-           // MyDelegate DelObj = new MyDelegate(myFun1);
-            
-            //DelObj += MyDelegate(myFun2);
-
-           /// MessageBox.Show(DelObj("ok1\t").ToString());
-            //DelObj -= (myFun1);
-           // DelObj += (myFun2);
-    //           MessageBox.Show(DelObj("ok2\t").ToString());
 
         }
-       
-        
+
+        private bool checkinMain(Employee emp)
+        {
+            if (emp.Experience > 5)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace TestGitApplication
 {
 
-    class Employee
+    public class Employee
     {
 
         public int Id { set; get; }
         public string Name { set; get; }
         public int Experience { set; get; }
 
-        public static void PromoteEmployee(List<Employee> employeelist)
+        public static void PromoteEmployee(List<Employee> employeelist,IsPromotable isPromotable)
         {
             foreach (Employee employee in employeelist)
             {
-                if (employee.Experience > 5)
+                if (isPromotable(employee))
                 {
                     Console.WriteLine("Employee" + " " + employee.Name + " " + "Promoted");
                 }
