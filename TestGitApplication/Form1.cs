@@ -25,24 +25,9 @@ namespace TestGitApplication
         private void button1_Click(object sender, EventArgs e)
         {
 
+            //comment added
+            MessageBox.Show("hello");
 
-            int[] numbers = { 1, 2, 3, 4, 5 };
-            var dd = from number in numbers where (number%2)==0
-                     select number;
-            MyDelegate DelObj = new MyDelegate(myFun1);
-            
-            //DelObj += MyDelegate(myFun2);
-
-            MessageBox.Show(DelObj("ok1\t").ToString());
-            //DelObj -= (myFun1);
-            DelObj += (myFun2);
-            MessageBox.Show(DelObj("ok2\t").ToString());
-
-        }
-        public string myFun1(string str)
-        {
-            return  str+"fun1";
-   
         }
         public string myFun2(string str)
         {
