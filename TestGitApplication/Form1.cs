@@ -25,12 +25,7 @@ namespace TestGitApplication
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //comment added
-            //develop branch added
-            //List<int> d = new List<int>();
-            //d.Add(1);
-            //d.Add(2);
-            //d.Add(3);
+
             int[] numbers = { 1, 2, 3, 4, 5 };
             var dd = from number in numbers where (number%2)==0
                      select number;
@@ -46,8 +41,8 @@ namespace TestGitApplication
         }
         public string myFun1(string str)
         {
-           return  str+"fun1";
-
+            return  str+"fun1";
+   
         }
         public string myFun2(string str)
         {
